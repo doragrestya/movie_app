@@ -11,6 +11,7 @@ class itemListVertical extends StatelessWidget {
         shrinkWrap: true,
         itemCount: list.length,
         scrollDirection: Axis.vertical,
+        physics: NeverScrollableScrollPhysics(),
         itemBuilder: (context, i) {
           return Padding(
               padding: EdgeInsets.only(bottom: 20, left: 5),
@@ -28,8 +29,8 @@ class itemListVertical extends StatelessWidget {
                               child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8),
                                   child: Image.network(
-                                      'http://192.168.0.114/movie/images/' +
-                                          list[i]['gambar']
+                                    'http://192.168.0.114/movie/images/' +
+                                        list[i]['gambar'],
                                   )),
                             ),
                             Flexible(
@@ -79,33 +80,5 @@ class itemListVertical extends StatelessWidget {
               )
           );
         });
-
-
-
-
-//      ListView.builder(
-//        scrollDirection: Axis.vertical,
-//        itemCount: list.length,
-//        itemBuilder: (BuildContext context, int index) {
-//          return Container(
-//            padding: EdgeInsets.only(left: 16, right: 16),
-//            height: MediaQuery.of(context).size.height,
-//            width: MediaQuery.of(context).size.width,
-//            child: Stack(
-//              children: <Widget>[
-//                ClipRRect(
-//                  borderRadius: BorderRadius.circular(16),
-//                  child: Image.network(
-//                    'http://192.168.0.114/movie/images/' +
-//                        list[index]['gambar'],
-//                    fit: BoxFit.fill,
-//                    width: MediaQuery.of(context).size.width,
-//                  ),
-//                ),
-//                Text('${list[index]['judul']}'),
-//              ],
-//            ),
-//          );
-//        });
   }
 }

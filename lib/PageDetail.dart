@@ -1,4 +1,8 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+
+
+
 
 class PageDetail extends StatelessWidget {
   List list;
@@ -24,13 +28,13 @@ class PageDetail extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8),
-                  child: ClipRRect(
-                    child: Image.network(
-                      'http://192.168.0.114/movie/images/' +
-                          list[index]['gambar'],
-                      fit: BoxFit.fill,
+                    child: ClipRRect(
+                      child: Image.network(
+                        'http://192.168.0.114/movie/images/' +
+                            list[index]['gambar'],
+                        fit: BoxFit.fill,
+                      ),
                     ),
-                  ),
                 ),
                 Card(
                   child: Padding(
@@ -65,3 +69,4 @@ class PageDetail extends StatelessWidget {
     );
   }
 }
+
